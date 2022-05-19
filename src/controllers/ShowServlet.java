@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Message;
-import utils.CBUtil;
+import utils.DBUtil;
 
 /**
  * Servlet implementation class ShowServlet
@@ -32,7 +32,7 @@ public class ShowServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        EntityManager em = CBUtil.createEntityManager();
+        EntityManager em = DBUtil.createEntityManager();
 
         // 該当のIDのメッセージ1件のみをデータベースから取得
         Message m = em.find(Message.class, Integer.parseInt(request.getParameter("id")));

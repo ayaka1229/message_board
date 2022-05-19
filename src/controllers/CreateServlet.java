@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Message;
-import utils.CBUtil;
+import utils.DBUtil;
 
 /**
  * Servlet implementation class CreateServlet
@@ -39,7 +39,7 @@ public class CreateServlet extends HttpServlet {
 
 		//処理部(CSRF対策チェック)
 		if(_token != null && _token.equals(request.getSession().getId())) {
-			EntityManager em = CBUtil.createEntityManager();
+			EntityManager em = DBUtil.createEntityManager();
 			em.getTransaction().begin();
 
 			Message m = new Message();

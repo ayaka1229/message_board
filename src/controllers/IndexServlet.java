@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Message;
-import utils.CBUtil;
+import utils.DBUtil;
 /**
  * Servlet implementation class IndexServlet
  */
@@ -34,7 +34,7 @@ public class IndexServlet extends HttpServlet {
          * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
          */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        EntityManager em = CBUtil.createEntityManager();
+        EntityManager em = DBUtil.createEntityManager();
 
         List<Message> messages = em.createNamedQuery("getAllMessages", Message.class).getResultList();
 
