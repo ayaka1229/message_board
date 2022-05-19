@@ -1,5 +1,7 @@
 package utils;
 
+//プロパティ的な奴
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
